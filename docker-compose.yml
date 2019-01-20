@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  frontend:
+    image: mhart/alpine-node:8
+    restart: always
+    working_dir: /wof
+    command: npm run dev
+    volumes:
+      - ./frontend:/wof
+    ports:
+      - "8080:8080"
+    depends_on:
+      - backend
+  backend:
+    working_dir: /wof
+    build: ./backend
+    command: python -u main.py
+    ports:
+      - 8000:8000
+    volumes:
+      - ./backend:/wof
+    depends_on:
+      - redis
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+    volumes:
+      - ./redis_data:/data
+    restart: always
