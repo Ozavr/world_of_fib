@@ -3,7 +3,7 @@ from settings import INPUT_CONFINES
 
 fib_input_schema = {
     'type': 'object',
-    'propertiest': {
+    'properties': {
         'from': {
             'type': 'number', 
             'minimum': INPUT_CONFINES['from']['min'], 
@@ -17,3 +17,4 @@ fib_input_schema = {
     },
     'required': ['from', 'to']
 }
+

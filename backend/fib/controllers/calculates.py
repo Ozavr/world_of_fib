@@ -34,6 +34,8 @@ class FibController:
         for num in result:
             compl_result += str(num) + ', '
         compl_result = compl_result[:len(compl_result) - 2]
+        if result == '':
+            compl_result = 'List of numbers is empty'
         return compl_result
             
 
