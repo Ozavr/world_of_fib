@@ -1,17 +1,17 @@
 version: '3'
 
 services:
-  # frontend:
-  #   image: mhart/alpine-node:8
-  #   restart: always
-  #   working_dir: /wof
-  #   command: npm run dev
-  #   volumes:
-  #     - ./frontend:/wof
-  #   ports:
-  #     - "8080:8080"
-  #   depends_on:
-  #     - backend
+  frontend:
+    image: mhart/alpine-node:8
+    restart: always
+    working_dir: /wof
+    command: npm run dev
+    volumes:
+      - ./frontend:/wof
+    ports:
+      - 8080:8080
+    depends_on:
+      - backend
   backend:
     working_dir: /wof
     build: ./backend

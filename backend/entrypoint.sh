@@ -1,5 +1,5 @@
 #!/bin/sh
 
 
-pytest 
+pytest > test.log
 python -u main.py

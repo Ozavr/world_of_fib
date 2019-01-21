@@ -13,7 +13,7 @@ Vue.use(VueMaterial)
 
 Vue.use(new VueSocketIO({
   debug: true,
-  connection: 'http://localhost:8000/fib',
+  connection: 'localhost:8000/fib',
 }))
 
 
