@@ -3,8 +3,7 @@ version: '3'
 services:
   frontend:
     working_dir: /wof
-    #image: mhart/alpine-node:8
-    build: ./frontend
+    image: mhart/alpine-node:8
     restart: always
     command: npm run dev
     volumes:
